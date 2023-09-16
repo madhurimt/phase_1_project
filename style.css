@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    background-color: #00154f;
+    color: whitesmoke;
+}
+
+header .logo {
+    color: #ecaf2b;
+}
+
+header div,
+li {
+    font-size: 1.1rem;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+header .links {
+    display: flex;
+}
+
+ul li {
+    letter-spacing: 1px;
+    list-style-type: none;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+header .links li:hover {
+    color: #ecaf2b;
+}
