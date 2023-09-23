@@ -9,8 +9,12 @@ const main = document.getElementById('main');
 const trending = document.querySelector('.trending');
 const movies = document.querySelector('.movies');
 
-//Adding event listener to get trending movies 
+//Loading movies by default on the page
+window.onload = () => {
+  getMovies(trendingUrl);
+};
 
+//Adding event listener to get trending movies 
 trending.addEventListener("click",function(){
   getMovies(trendingUrl)});
 
