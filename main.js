@@ -1,4 +1,5 @@
-const apiKey="9c94b7a29671191c02aa22567b99af7f";
+require("dotenv").config();
+const apiKey = process.env.API_KEY;
 const baseUrl = 'https://api.themoviedb.org/3/';
 const moviesUrl = `${baseUrl}discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
 const trendingUrl = `${baseUrl}trending/all/day?language=en-US&api_key=${apiKey}`;
@@ -11,7 +12,11 @@ const movies = document.querySelector('.movies');
 //Adding event listener to get trending movies 
 trending.addEventListener("click",getMovies(trendingUrl));
 
+//Adding Event Listener to get the movies 
+movies.addEventListener("click",getMovies(moviesUrl));
+
 async function getMovies(url) {
+        main.innerHTML = '';
         const response = await fetch(url);
         const data = await response.json();
         console.log(data.results);
@@ -31,5 +36,5 @@ async function getMovies(url) {
             `;
         
             main.appendChild(movieCard);
-        });
+       });
 }
