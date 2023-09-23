@@ -583,6 +583,8 @@ const imgUrl = "https://image.tmdb.org/t/p/w500";
 const main = document.getElementById("main");
 const trending = document.querySelector(".trending");
 const movies = document.querySelector(".movies");
+//Loading movies by default on the page
+movies.addEventListener("click", getMovies(moviesUrl));
 //Adding event listener to get trending movies 
 trending.addEventListener("click", function() {
     getMovies(trendingUrl);
