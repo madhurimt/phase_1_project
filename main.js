@@ -10,10 +10,14 @@ const trending = document.querySelector('.trending');
 const movies = document.querySelector('.movies');
 
 //Adding event listener to get trending movies 
-trending.addEventListener("click",getMovies(trendingUrl));
+
+trending.addEventListener("click",function(){
+  getMovies(trendingUrl)});
 
 //Adding Event Listener to get the movies 
-movies.addEventListener("click",getMovies(moviesUrl));
+//Code to prevent the direct execution of click(i.e, executing function without even clicking)
+movies.addEventListener("click",function() {
+  getMovies(moviesUrl)});
 
 async function getMovies(url) {
         main.innerHTML = '';

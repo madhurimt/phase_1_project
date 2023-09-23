@@ -39,3 +39,44 @@ ul li {
 header .links li:hover {
     color: #ecaf2b;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.movie-card {
+    width: 304px;
+    margin: 1rem;
+    box-shadow: 0 4px 5px rgba(28, 28, 28, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+}
+
+.movie-info h3,
+.rating {
+    font-size: 1rem;
+}
+
+.rating {
+    color: rgb(241, 47, 47);
+    font-weight: bold;
+}
