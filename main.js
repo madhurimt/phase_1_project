@@ -3,6 +3,7 @@ const apiKey = process.env.API_KEY;
 const baseUrl = 'https://api.themoviedb.org/3/';
 const moviesUrl = `${baseUrl}discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
 const trendingUrl = `${baseUrl}trending/all/day?language=en-US&api_key=${apiKey}`;
+const genreMovieUrl = `${baseUrl}discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
 const imgUrl = 'https://image.tmdb.org/t/p/w500';
 
 //Array of Genre Categories
@@ -32,6 +33,7 @@ const genreArray = [
 const main = document.getElementById('main');
 const trending = document.querySelector('.trending');
 const movies = document.querySelector('.movies');
+const genre= document.querySelector('.genre');
 
 //Loading movies by default on the page
 window.onload = () => {
@@ -39,13 +41,17 @@ window.onload = () => {
 };
 
 //Adding event listener to get trending movies 
-trending.addEventListener("click",function(){
+trending.addEventListener('click',function(){
   getMovies(trendingUrl)});
 
 //Adding Event Listener to get the movies 
 //Code to prevent the direct execution of click(i.e, executing function without even clicking)
-movies.addEventListener("click",function() {
+movies.addEventListener('click',function() {
   getMovies(moviesUrl)});
+
+genre.addEventListener('click',function(){
+  getMovies(genreMovieUrl);
+})  
 
 async function getMovies(url) {
         main.innerHTML = '';
