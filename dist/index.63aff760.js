@@ -681,6 +681,14 @@ movies.addEventListener("click", function() {
 genre.addEventListener("click", function() {
     getMovies(genreMovieUrl);
 });
+//DOM for generating the genre category
+genreArray.forEach((element)=>{
+    const tagDiv = document.createElement("div");
+    tagDiv.classList.add("tag");
+    tagDiv.id = element.id;
+    tagDiv.innerText = element.name;
+    genre.appendChild(tagDiv);
+});
 async function getMovies(url) {
     main.innerHTML = "";
     const response = await fetch(url);
