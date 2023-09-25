@@ -40,6 +40,17 @@ header .links li:hover {
     color: #ecaf2b;
 }
 
+.genre-tags {
+    padding: 10px;
+    width: 50%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1px auto;
+    transition: all 1s ease-in-out;
+    border-radius: 5px;
+}
+
 main {
     display: flex;
     justify-content: center;

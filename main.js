@@ -33,7 +33,7 @@ const genreArray = [
 const main = document.getElementById('main');
 const trending = document.querySelector('.trending');
 const movies = document.querySelector('.movies');
-const genre= document.querySelector('.genre');
+const genre= document.querySelector('.genre-tags');
 
 //Loading movies by default on the page
 window.onload = () => {
