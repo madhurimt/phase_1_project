@@ -33,6 +33,7 @@ const genreArray = [
 const main = document.getElementById('main');
 const trending = document.querySelector('.trending');
 const movies = document.querySelector('.movies');
+const genreLink= document.querySelector('.genre');
 const genre= document.querySelector('.genre-tags');
 
 //Loading movies by default on the page
@@ -62,6 +63,14 @@ tagDiv.innerText = element.name;
 genre.appendChild(tagDiv);
 });
 
+//Making the tags appear on mouseover and hidden on mouseleave event 
+
+let isMouseHover = false;
+
+genreLink.addEventListener('mouseenter', () => {
+  isMouseHover = true;
+  genre.classList.remove('hidden');
+});
 
 async function getMovies(url) {
         main.innerHTML = '';
