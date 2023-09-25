@@ -72,6 +72,13 @@ genreLink.addEventListener('mouseenter', () => {
   genre.classList.remove('hidden');
 });
 
+genreLink.addEventListener('mouseleave', () => {
+  isHovering = false;
+  setTimeout(() => {
+      genre.classList.add('hidden');
+  }, 3000);
+});
+
 async function getMovies(url) {
         main.innerHTML = '';
         const response = await fetch(url);
